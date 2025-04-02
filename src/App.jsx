@@ -7,6 +7,7 @@ import ProductDetail from "./components/product/Product.jsx";
 
 const About = () => <h2>About Page</h2>
 
+
 function App() {
     return (
         <div>

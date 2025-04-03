@@ -23,15 +23,9 @@ const Home = () => {
     return (
         <div className="home-container">
             {/* Hero Bölümü */}
-            <header className="hero-section">
-                <h1>Hoş Geldiniz!</h1>
-                <p>Cam balkon sistemlerinde kalite ve konforun adresi</p>
-                <Link to="/about" className="cta-button">Hakkımızda</Link>
-            </header>
-
             {/* Cam Balkon Ürünleri */}
             <section className="balcony-products">
-                <h2 className="section-title">Cam Balkon Çözümlerimiz</h2>
+                <h2 className="section-title">Ürünlerimiz</h2>
                 <div className="products-grid">
                     {balconyProducts.map(product => (
                         <div key={product.id} className="product-card">
@@ -50,6 +44,16 @@ const Home = () => {
                     ))}
                 </div>
             </section>
+            <br/>
+            <br/>
+            <header className="hero-section">
+                <h1>Hoş Geldiniz!</h1>
+                <p>Cam balkon sistemlerinde kalite ve konforun adresi</p>
+                <Link to="/about" className="cta-button">Hakkımızda</Link>
+            </header>
+
+            // Burayı düzelt
+
         </div>
     );
 };

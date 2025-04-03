@@ -2,6 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/Footer.css';
+import { FiMapPin, FiBox, FiPhone ,FiInstagram } from 'react-icons/fi';
 
 const Footer = () => {
     return (
@@ -37,9 +38,24 @@ const Footer = () => {
                     <div className="footer-column">
                         <h3>İletişim Bilgileri</h3>
                         <ul>
-                            <li className="checked">✓ Ege Sokak, 5B Güngören, İstanbul</li>
-                            <li className="checked">✓ Cam Balkon Sistemleri</li>
-                            <li>□ 0543 848 85 59</li>
+                            <li>
+                                <FiMapPin className="contact-icon" />
+                                Ege Sokak, 5B Güngören, İstanbul
+                            </li>
+                            <li>
+                                <FiBox className="contact-icon" />
+                                Cam Balkon Sistemleri
+                            </li>
+                            <li>
+                                <FiPhone className="contact-icon" />
+                                0543 848 85 59
+                            </li>
+                            <li>
+                                <a href="https://www.instagram.com/saygincambalkn" target="_blank" rel="noopener noreferrer" className="instagram-link">
+                                    <FiInstagram className="contact-icon" />
+                                    <span>Instagram</span>
+                                </a>
+                            </li>
                         </ul>
                     </div>
 

@@ -1,8 +1,9 @@
 // components/Footer.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../styles/Footer.css';
+import "../styles/Footer.css";
 import { FiMapPin, FiBox, FiPhone ,FiInstagram } from 'react-icons/fi';
+import { productCategories } from "../data/products.js"; // productCategories verisini import et
 
 const Footer = () => {
     return (
@@ -21,7 +22,7 @@ const Footer = () => {
                     </div>
                 </div>
 
-                {/* Orta Kısım - 3 Kolon */}
+                {/* Orta Kısım - 3 (Şimdi 4) Kolon */}
                 <div className="footer-middle">
                     {/* Sayfalar */}
                     <div className="footer-column">
@@ -34,13 +35,28 @@ const Footer = () => {
                         </ul>
                     </div>
 
+                    {/* YENİ KOLON: Ürün Grupları */}
+                    <div className="footer-column">
+                        <h3>Ürün Gruplarımız</h3>
+                        <ul>
+                            {productCategories.map(category => ( // productCategories dizisi üzerinde dönüyoruz
+                                <li key={category.id}>
+                                    {/* Kategori sayfasına yönlendiren Link */}
+                                    <Link to={`/kategori/${category.id}`}>
+                                        {category.name} {/* Kategori adını gösteriyoruz */}
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+
                     {/* İletişim */}
                     <div className="footer-column">
                         <h3>İletişim Bilgileri</h3>
                         <ul>
                             <li>
                                 <FiMapPin className="contact-icon" />
-                                Ege Sokak, 5B Güngören, İstanbul
+                                Kocaeli - İzmit
                             </li>
                             <li>
                                 <FiBox className="contact-icon" />
@@ -48,7 +64,7 @@ const Footer = () => {
                             </li>
                             <li>
                                 <FiPhone className="contact-icon" />
-                                0543 848 85 59
+                                05442464141
                             </li>
                             <li>
                                 <a href="https://www.instagram.com/saygincambalkn" target="_blank" rel="noopener noreferrer" className="instagram-link">
@@ -72,6 +88,9 @@ const Footer = () => {
                 </div>
 
                 {/* Alt Kısım */}
+                <div className="footer-bottom">
+                    <p>&copy; {new Date().getFullYear()} Saygın Cam Balkon Türkiye. Tüm Hakları Saklıdır.</p>
+                </div>
 
             </div>
         </footer>
